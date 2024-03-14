@@ -10,24 +10,24 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/applicants")
 public class ApplicantController {
-
+    
     private final ApplicantService applicantService;
-
+    
     @Autowired
     public ApplicantController(ApplicantService applicantService) {
         this.applicantService = applicantService;
     }
-
-    @GetMapping("/highCreditScoreEligibleApplicant")
-    public Applicant findHighCreditScoreEligibleApplicant() {
-        return applicantService.findHighCreditScoreEligibleApplicant();
+    
+    @GetMapping("/high-limit")
+    public Applicant findHighLimitEligibleApplicant() {
+        return applicantService.findHighLimitEligibleApplicant();
     }
-
-    @GetMapping("/moderateCreditScoreEligibleApplicant")
-    public Applicant findModerateCreditScoreEligibleApplicant() {
-        return applicantService.findModerateCreditScoreEligibleApplicant();
+    
+    @GetMapping("/moderate-limit")
+    public Applicant findModerateLimitEligibleApplicant() {
+        return applicantService.findModerateLimitEligibleApplicant();
     }
-
-    // You can add additional endpoints and business logic as per your requirements
-
+    
+    // Additional methods for debt-to-income ratio calculation and pre-qualification status update can be added here
+    
 }

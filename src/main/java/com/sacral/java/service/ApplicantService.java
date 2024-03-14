@@ -7,22 +7,21 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ApplicantService {
-    
     private final ApplicantRepository applicantRepository;
-    
+
     @Autowired
     public ApplicantService(ApplicantRepository applicantRepository) {
         this.applicantRepository = applicantRepository;
     }
 
-    public Applicant findHighCreditScoreEligibleApplicant() {
-        return applicantRepository.findHighCreditScoreEligibleApplicant();
+    public Applicant findHighLimitEligibleApplicant() {
+        return applicantRepository.findHighLimitEligibleApplicant();
     }
 
-    public Applicant findModerateCreditScoreEligibleApplicant() {
-        return applicantRepository.findModerateCreditScoreEligibleApplicant();
+    public Applicant findModerateLimitEligibleApplicant() {
+        return applicantRepository.findModerateLimitEligibleApplicant();
     }
 
-    // You can add additional methods and business logic as per your requirements
+    // Additional methods for debt-to-income ratio calculation and pre-qualification status update can be added here
 
 }

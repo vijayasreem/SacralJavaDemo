@@ -10,11 +10,11 @@ import org.springframework.stereotype.Repository;
 public interface ApplicantRepository extends JpaRepository<Applicant, Long> {
 
     @Query("SELECT a FROM Applicant a WHERE a.creditScore >= 700 AND a.annualIncome >= 30000")
-    Applicant findHighCreditScoreEligibleApplicant();
+    Applicant findHighLimitEligibleApplicant();
 
     @Query("SELECT a FROM Applicant a WHERE a.creditScore >= 600 AND a.annualIncome >= 20000")
-    Applicant findModerateCreditScoreEligibleApplicant();
+    Applicant findModerateLimitEligibleApplicant();
 
-    // You can add additional queries and methods as per your requirements
+    // Additional methods for debt-to-income ratio calculation and pre-qualification status update can be added here
 
 }
